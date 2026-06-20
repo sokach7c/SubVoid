@@ -66,6 +66,7 @@ Run the smallest meaningful check for the change:
 
 - Always run `pnpm lint` after code changes.
 - Run `pnpm build` after changes to routes, Next config, metadata, provider setup, TypeScript config, or dependencies.
+- After Docker-related changes, run a local Docker build test before handoff. This applies to `Dockerfile`, `.dockerignore`, Docker GitHub workflows, Docker release docs, and dependency/build changes that affect the image. If Docker build cannot complete because of external registry/network failure, report the exact failing pull/request and keep the Docker process stopped.
 - For UI changes, inspect the app in a browser at desktop and mobile widths.
 - For calendar logic changes, cover week navigation, event positioning, filtering, and short-event rendering.
 

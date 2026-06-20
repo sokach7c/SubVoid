@@ -107,4 +107,4 @@ The app currently focuses on authenticated subscription tooling:
 
 Persistence is SQLite based and exposed through domain/API code. Components should not import database clients directly.
 
-Authentication uses a localStorage JWT. Page access is guarded client-side and API routes enforce the token server-side through the `Authorization` header.
+Authentication uses a localStorage JWT. Page access is guarded client-side and management API routes enforce the token server-side through the `Authorization` header. Clash subscription YAML URLs under `/api/clash/subscriptions/:token/config.yaml` are intentionally public so proxy clients can fetch saved subscriptions without a login session.

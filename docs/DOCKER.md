@@ -13,6 +13,14 @@ docker build --platform linux/amd64 -t subvoid:local .
 docker run --rm -p 3000:3000 --env-file .env subvoid:local
 ```
 
+也可以使用 Docker Compose 启动，SQLite 数据会持久化到宿主机 `./data` 目录：
+
+```bash
+docker compose up -d --build
+docker compose logs -f subvoid
+docker compose down
+```
+
 ## 环境变量
 
 至少需要配置：
