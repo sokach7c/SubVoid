@@ -1,0 +1,17 @@
+.git
+.github
+.next
+.env
+.env.*
+!.env.example
+node_modules
+data
+coverage
+Dockerfile
+docker-compose*.yml
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+README.md
+tsconfig.tsbuildinfo

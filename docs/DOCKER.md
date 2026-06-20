@@ -1,0 +1,58 @@
+# Docker 发布说明
+
+本项目使用 `pnpm` 构建 Next.js 应用，并通过 GitHub Actions 在推送版本 Tag 时构建 Docker 镜像。
+
+## 本地镜像
+
+Dockerfile 位于仓库根目录，运行时默认监听 `3000` 端口。
+
+```bash
+docker build --platform linux/amd64 -t subvoid:local .
+docker run --rm -p 3000:3000 --env-file .env subvoid:local
+```
+
+## 环境变量
+
+至少需要配置：
+
+```bash
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=change-me
+JWT_SECRET=replace-with-a-long-random-secret
+DATABASE_PATH=./data/subvoid.sqlite
+PUBLIC_URL=https://subvoid.example.com
+```
+
+`PUBLIC_URL` 用于生成 Clash 持久订阅链接的公共地址前缀。
+
+## GitHub Actions 发布
+
+Workflow 文件：
+
+```text
+.github/workflows/docker-publish.yml
+```
+
+触发方式：
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Tag 必须匹配 `v1.0.0` 这种格式。Workflow 会构建 `linux/amd64` 镜像并推送到 Docker Hub。
+
+## Docker Hub Secrets
+
+需要在 GitHub 仓库中配置以下 Secrets：
+
+```text
+DOCKERHUB_USERNAME
+DOCKERHUB_TOKEN
+```
+
+默认推送镜像：
+
+```text
+DOCKERHUB_USERNAME/subvoid:v1.0.0
+```

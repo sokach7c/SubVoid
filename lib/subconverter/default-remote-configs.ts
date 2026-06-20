@@ -1,0 +1,81 @@
+import type { RemoteConfigInput } from "@/lib/subconverter/types";
+
+export const DEFAULT_REMOTE_CONFIGS: RemoteConfigInput[] = [
+  {
+    groupName: "universal",
+    label: "No-Urltest",
+    url: "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/universal/no-urltest.ini",
+    enabled: true,
+    sortOrder: 10,
+  },
+  {
+    groupName: "universal",
+    label: "Urltest",
+    url: "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/universal/urltest.ini",
+    enabled: true,
+    sortOrder: 20,
+  },
+  {
+    groupName: "customized",
+    label: "Maying",
+    url: "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/maying.ini",
+    enabled: true,
+    sortOrder: 10,
+  },
+  {
+    groupName: "customized",
+    label: "Ytoo",
+    url: "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/ytoo.ini",
+    enabled: true,
+    sortOrder: 20,
+  },
+  {
+    groupName: "customized",
+    label: "FlowerCloud",
+    url: "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/flowercloud.ini",
+    enabled: true,
+    sortOrder: 30,
+  },
+  {
+    groupName: "customized",
+    label: "Nexitally",
+    url: "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/nexitally.ini",
+    enabled: true,
+    sortOrder: 40,
+  },
+  {
+    groupName: "customized",
+    label: "SoCloud",
+    url: "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/socloud.ini",
+    enabled: true,
+    sortOrder: 50,
+  },
+  {
+    groupName: "customized",
+    label: "ARK",
+    url: "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/ark.ini",
+    enabled: true,
+    sortOrder: 60,
+  },
+  {
+    groupName: "customized",
+    label: "ssrCloud",
+    url: "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/customized/ssrcloud.ini",
+    enabled: true,
+    sortOrder: 70,
+  },
+  {
+    groupName: "Special",
+    label: "NeteaseUnblock(仅规则，No-Urltest)",
+    url: "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/special/netease.ini",
+    enabled: true,
+    sortOrder: 10,
+  },
+  {
+    groupName: "Special",
+    label: "Basic(仅GEOIP CN + Final)",
+    url: "https://cdn.jsdelivr.net/gh/SleepyHeeead/subconverter-config@master/remote-config/special/basic.ini",
+    enabled: true,
+    sortOrder: 20,
+  },
+];

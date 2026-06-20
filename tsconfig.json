@@ -1,0 +1,61 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@subboost/core": [
+        "./features/clash/core/index.ts"
+      ],
+      "@subboost/core/*": [
+        "./features/clash/core/*"
+      ],
+      "@subboost/server-core": [
+        "./features/clash/server-core/index.ts"
+      ],
+      "@subboost/server-core/*": [
+        "./features/clash/server-core/*"
+      ],
+      "@subboost/ui": [
+        "./features/clash/ui/index.ts"
+      ],
+      "@subboost/ui/*": [
+        "./features/clash/ui/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "sub-web",
+    "subboost"
+  ]
+}
