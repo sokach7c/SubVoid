@@ -2,6 +2,8 @@
 
 本项目使用 `pnpm` 构建 Next.js 应用，并通过 GitHub Actions 在推送版本 Tag 时构建 Docker 镜像。
 
+Dockerfile 固定使用 `pnpm@10.33.4`，避免 Corepack 在构建时自动激活不兼容的新版 pnpm。
+
 ## 本地镜像
 
 Dockerfile 位于仓库根目录，运行时默认监听 `3000` 端口。

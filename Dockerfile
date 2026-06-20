@@ -1,9 +1,7 @@
-# syntax=docker/dockerfile:1.7
-
 FROM node:20-bookworm-slim AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
+RUN corepack enable && corepack prepare pnpm@10.33.4 --activate
 WORKDIR /app
 
 FROM base AS deps
@@ -25,6 +23,7 @@ ENV PORT=3000
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable \
+  && corepack prepare pnpm@10.33.4 --activate \
   && apt-get update \
   && apt-get install -y --no-install-recommends python3 make g++ \
   && rm -rf /var/lib/apt/lists/*
