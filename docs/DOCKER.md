@@ -40,7 +40,7 @@ git tag v1.0.0
 git push origin v1.0.0
 ```
 
-Tag 必须匹配 `v1.0.0` 这种格式。Workflow 会构建 `linux/amd64` 镜像并推送到 Docker Hub。
+推送到 `main` / `master` 分支、推送 `v*` Tag，或在 GitHub Actions 页面手动运行 workflow 都会触发构建。Workflow 会构建 `linux/amd64` 镜像并推送到 Docker Hub。
 
 ## Docker Hub Secrets
 
@@ -55,4 +55,6 @@ DOCKERHUB_TOKEN
 
 ```text
 DOCKERHUB_USERNAME/subvoid:v1.0.0
+DOCKERHUB_USERNAME/subvoid:latest
+DOCKERHUB_USERNAME/subvoid:sha-xxxxxxx
 ```
